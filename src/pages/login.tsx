@@ -81,48 +81,52 @@ function LoginPage() {
   };
 
   return (
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      height="100vh">
-      <Container maxWidth="xs">
-        <Typography variant="h4" align="center">Login</Typography>
-        <form onSubmit={handleSubmit}>
-          <TextField
-            color='secondary'
-            label="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            fullWidth
-            margin="normal"
-            required
-          />
-          <TextField
-            label="Password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            fullWidth
-            margin="normal"
-            required
-          />
-          {loading ? <CircularProgress /> : <Button variant="contained" color="primary" type="submit" fullWidth>
-            Login
-          </Button>}
-        </form>
-        <Snackbar
-          open={alert.open}
-          autoHideDuration={6000}
-          onClose={handleCloseAlert}
-          anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
-          <Alert onClose={handleCloseAlert} severity='error' variant="filled">
-            {alert.message}
-          </Alert>
-        </Snackbar>
-      </Container>
-    </Box>
-  );
+  <Box
+    display="flex"
+    alignItems="center"
+    justifyContent="center"
+    height="100vh"
+    style={{ backgroundColor: 'white' }} // Add this line to set background color to white
+  >
+    <Container maxWidth="xs">
+      <Typography variant="h4" align="center">Login</Typography>
+      <form onSubmit={handleSubmit}>
+        <TextField
+          color='secondary'
+          label="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          fullWidth
+          margin="normal"
+          required
+        />
+        <TextField
+          label="Password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          fullWidth
+          margin="normal"
+          required
+        />
+        {loading ? <CircularProgress /> : <Button variant="contained" color="primary" type="submit" fullWidth>
+          Login
+        </Button>}
+      </form>
+      <Snackbar
+        open={alert.open}
+        autoHideDuration={6000}
+        onClose={handleCloseAlert}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+      >
+        <Alert onClose={handleCloseAlert} severity='error' variant="filled">
+          {alert.message}
+        </Alert>
+      </Snackbar>
+    </Container>
+  </Box>
+);
+
 }
 
 export default LoginPage;
