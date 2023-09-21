@@ -1,5 +1,5 @@
-export const API_BASE_URL = 'http://192.168.87.156:5000/api';
-export const WS_BASE_URL = 'ws://192.168.87.156:5000/ws';
+export const API_BASE_URL = 'https://absence-backend.vercel.app/api';
+export const WS_BASE_URL = 'ws://absence-backend.vercel.app//ws';
 let token = '';
 
 export const getToken = () => token
